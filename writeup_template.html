@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>writeup_template</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	position: relative;
+	margin: .5em 0;
+	-webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	-moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	border-left: 10px solid #358ccb;
+	background-color: #fdfdfd;
+	background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-size: 3em 3em;
+	background-origin: content-box;
+	overflow: visible;
+	padding: 0;
+}
+
+code[class*="language"] {
+	max-height: inherit;
+	height: 100%;
+	padding: 0 1em;
+	display: block;
+	overflow: auto;
+}
+
+/* Margin bottom to accomodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background-color: #fdfdfd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	position: relative;
+	padding: .2em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-ms-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	border-radius: 0.3em;
+	color: #c92c2c;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	display: inline;
+	white-space: normal;
+}
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+	content: '';
+	z-index: -2;
+	display: block;
+	position: absolute;
+	bottom: 0.75em;
+	left: 0.18em;
+	width: 40%;
+	height: 20%;
+	max-height: 13em;
+	-webkit-box-shadow: 0px 13px 8px #979797;
+	-moz-box-shadow: 0px 13px 8px #979797;
+	box-shadow: 0px 13px 8px #979797;
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+
+:not(pre) > code[class*="language-"]:after,
+pre[class*="language-"]:after {
+	right: 0.75em;
+	left: auto;
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
+	transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #7D8B99;
+}
+
+.token.punctuation {
+	color: #5F6364;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #c92c2c;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+	color: #2f9c0a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+	color: #1990b8;
+}
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+	font-weight: normal;
+}
+
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+	pre[class*="language-"]:before,
+	pre[class*="language-"]:after {
+		bottom: 14px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+}
+
+/* Plugin styles */
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+	color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers {
+	padding-left: 0;
+}
+
+pre[class*="language-"].line-numbers code {
+	padding-left: 3.8em;
+}
+
+pre[class*="language-"].line-numbers .line-numbers-rows {
+	left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+pre[data-line] code {
+	position: relative;
+	padding-left: 4em;
+}
+pre .line-highlight {
+	margin-top: 0;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+<style type="text/css">
+div.prism-show-language {
+	position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label {
+	color: black;
+	background-color: #CFCFCF;
+	display: inline-block;
+	position: absolute;
+	bottom: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	font-size: 0.9em;
+	border-radius: 0 0 0 5px;
+	padding: 0 0.5em;
+	text-shadow: none;
+	z-index: 1;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0"><strong>Traffic Sign Recognition</strong></h1>
+
+<hr>
+
+<h3 id="toc_1">Writeup for &lsquo;Build a Traffic Sign Recognition Project&rsquo;</h3>
+
+<p>The steps of this project are the following:</p>
+
+<ul>
+<li>Load the data set </li>
+<li>Explore, summarize and visualize the data set</li>
+<li>Design, train and test a model architecture</li>
+<li>Use the model to make predictions on new images</li>
+<li>Analyze the softmax probabilities of the new images</li>
+<li>Summarize the results with a written report</li>
+</ul>
+
+<p>Here I will consider the <a href="https://review.udacity.com/#!/rubrics/481/view">rubric points</a> individually and describe how I addressed each point in my implementation. 
+Here is a link to my <a href="./Traffic_Sign_Classifier.ipynb">project code</a></p>
+
+<hr>
+
+<h3 id="toc_2">1. Submission Files</h3>
+
+<h2 id="toc_3"></h2>
+
+<p>As per requirement, executed all code blocks in the iPython Notebook and then converted the notebook to HTML <a href="Traffic_Sign_Classifier.html">File</a> with appropriate results.</p>
+
+<h3 id="toc_4">2. Dataset Exploration</h3>
+
+<h2 id="toc_5"></h2>
+
+<p>In order to explore the dataset, in addition to the existing general summary of the dataset (number of training samples, number of validation samples, number of test samples, and shape of the samples), I have generated number of samples in each classification (class ID) to visualize the distribution of data.  Finally, I have displayed a random image along with its sign name to confirm the pipeline is working as expected.</p>
+
+<h5 id="toc_6">I. Summary of dataset</h5>
+
+<p>Here is the summary of the dataset, which is extracted in code cell #2, using basic length and shape extractions methods. </p>
+
+<div><pre class="line-numbers"><code class="language-python">Training Set:   34799 samples
+Validation Set: 4410 samples
+Test Set:       12630 samples
+Image data shape = (32, 32, 3)
+Number of classes = 43</code></pre></div>
+
+<h5 id="toc_7">II. Exploratory Visualization</h5>
+
+<p>With the help of numpy library, I have counted total number of occurrences of the each classID and then translated the class ID to traffic sign name.  Using pandas library, here I have defined a method <q>get_name_from_id</q> in code cell #3, which returns traffic sign name for a given classID.  It is evident in the distribution that, there are few classes that have significantly larger samples when compared to others.  This could potentially lead to biased learning; however, since I had achieve good results without data augmentation, I did not have to take any measure to uniformly distribute the samples (e.g., data augmentation).</p>
+
+<div><pre class="line-numbers"><code class="language-python">Id = 0 -- Count= 180 -- Name: Speed limit (20km/h)
+Id = 1 -- Count= 1980 -- Name: Speed limit (30km/h)
+Id = 2 -- Count= 2010 -- Name: Speed limit (50km/h)
+Id = 3 -- Count= 1260 -- Name: Speed limit (60km/h)
+Id = 4 -- Count= 1770 -- Name: Speed limit (70km/h)
+Id = 5 -- Count= 1650 -- Name: Speed limit (80km/h)
+Id = 6 -- Count= 360 -- Name: End of speed limit (80km/h)
+Id = 7 -- Count= 1290 -- Name: Speed limit (100km/h)
+Id = 8 -- Count= 1260 -- Name: Speed limit (120km/h)
+Id = 9 -- Count= 1320 -- Name: No passing
+Id = 10 -- Count= 1800 -- Name: No passing for vehicles over 3.5 metric tons
+Id = 11 -- Count= 1170 -- Name: Right-of-way at the next intersection
+Id = 12 -- Count= 1890 -- Name: Priority road
+Id = 13 -- Count= 1920 -- Name: Yield
+Id = 14 -- Count= 690 -- Name: Stop
+Id = 15 -- Count= 540 -- Name: No vehicles
+Id = 16 -- Count= 360 -- Name: Vehicles over 3.5 metric tons prohibited
+Id = 17 -- Count= 990 -- Name: No entry
+Id = 18 -- Count= 1080 -- Name: General caution
+Id = 19 -- Count= 180 -- Name: Dangerous curve to the left
+Id = 20 -- Count= 300 -- Name: Dangerous curve to the right
+Id = 21 -- Count= 270 -- Name: Double curve
+Id = 22 -- Count= 330 -- Name: Bumpy road
+Id = 23 -- Count= 450 -- Name: Slippery road
+Id = 24 -- Count= 240 -- Name: Road narrows on the right
+Id = 25 -- Count= 1350 -- Name: Road work
+Id = 26 -- Count= 540 -- Name: Traffic signals
+Id = 27 -- Count= 210 -- Name: Pedestrians
+Id = 28 -- Count= 480 -- Name: Children crossing
+Id = 29 -- Count= 240 -- Name: Bicycles crossing
+Id = 30 -- Count= 390 -- Name: Beware of ice/snow
+Id = 31 -- Count= 690 -- Name: Wild animals crossing
+Id = 32 -- Count= 210 -- Name: End of all speed and passing limits
+Id = 33 -- Count= 599 -- Name: Turn right ahead
+Id = 34 -- Count= 360 -- Name: Turn left ahead
+Id = 35 -- Count= 1080 -- Name: Ahead only
+Id = 36 -- Count= 330 -- Name: Go straight or right
+Id = 37 -- Count= 180 -- Name: Go straight or left
+Id = 38 -- Count= 1860 -- Name: Keep right
+Id = 39 -- Count= 270 -- Name: Keep left
+Id = 40 -- Count= 300 -- Name: Roundabout mandatory
+Id = 41 -- Count= 210 -- Name: End of no passing
+Id = 42 -- Count= 210 -- Name: End of no passing by vehicles over 3.5 metric tons</code></pre></div>
+
+<h5 id="toc_8">III.Validation with graphic presentation</h5>
+
+<p>In the following code cell (#4), with the help of matplot library and previously developed <q>get_name_from_id()</q> method, I have randomly selected an image and its associated sign name to confirm that my visualization and data extraction pipeline is working as expected.  For ease of comparison, I have presented the result of this cell in the next section where I show processed image along with the original image obtained in this code cell.</p>
+
+<h3 id="toc_9">3. Design and Test of the Model Architecture</h3>
+
+<h2 id="toc_10"></h2>
+
+<p>In this step, first the images were preprocessed, then the model architecture was defined, and finally the model was trained using the images.  In order to achieve minimum specified validation accuracy those tuning and retuning exercise has taken place in all the three steps. Following are brief discussion of the develop </p>
+
+<h5 id="toc_11">I. Preprocessing of images</h5>
+
+<p>In this step, first I have reduced color channel of the images (in all three data sets) from RGB to grayscale, essentially to make computation faster and at the same time make the image-shape compatible with my model input (input of my model is with 32x32x1). I do that in code cell #5, where I have defined a simple rgb to gray scale conversion method with the help of cv2 library and then shaping the image to 32x32x1. </p>
+
+<p>Second, I have normalized the images so that model can converge to a solution with less numerical complexity.  Again I have defined a simple method (thanks to lecture examples) in code cell #6 which normalizes images to -1.0 to 1.0.  I found normalizing using range [-1.0, 1.0] instead of [0.1 - 0.9] deals with image brightness better and accordingly increases the accuracy of the model.</p>
+
+<p>Finally, I have placed a visualization code in the same code cell (#6), to graphically observe the preprocessing results. Here I have displayed the same image randomly picked in code cell #4.  Below is an example side-by-side comparison of original image and processed image.</p>
+
+<p><img src="./writeup_images/before_process.png" alt="iamge_1" title="before_processing"> <img src="./writeup_images/after_process.png" alt="alt text" title="after_processing"></p>
+
+<p><em>Note: Though the image on the left looks black, but its actually an RGB image with poor brightness and contrst, and it is evident that preprocessing is doing a decent job by screening out the information of the image</em></p>
+
+<p>As part of the preprocessing, I also suffle the training dataset in code cell #7, essentially this will help to reduce biasness during learning epochs.</p>
+
+<h5 id="toc_12">II. Model Architecture and initialization</h5>
+
+<p>Next in code cell #9, the network is defined.  The network is primarily based on the Convolutional Neural Network (CNN) model, named &lsquo;LeNet&rsquo; model introduced in classroom lectures, with few adjustments to adopt to this application.  Essentially, the network has five layers with two droput points. The size of the layers and its associated filter size is presented in the following table.  The placeholder for the input dataset (x and y) and dropout hyperparameter of the network is defined in code cell #10.</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Layers</th>
+<th style="text-align: center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">Input</td>
+<td style="text-align: center">32x32x1 Grayscale Image</td>
+</tr>
+<tr>
+<td style="text-align: center"><strong>Layer - 1</strong>: Convolution with 5x5x1 filter</td>
+<td style="text-align: center">1x1 Stride, valid padding, output 28x28x6</td>
+</tr>
+<tr>
+<td style="text-align: center">RELU</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">Max pooling with 2x2 ksize</td>
+<td style="text-align: center">2x2 stride, valid padding, outputs 14x14x6</td>
+</tr>
+<tr>
+<td style="text-align: center"><strong>Layer - 2</strong>: Convolution with 5x5x6 filter</td>
+<td style="text-align: center">1x1 Stride, valid padding, output 10x10x16</td>
+</tr>
+<tr>
+<td style="text-align: center">RELU</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">Max pooling with 2x2 ksize</td>
+<td style="text-align: center">2x2 stride, valid padding, outputs 5x5x6</td>
+</tr>
+<tr>
+<td style="text-align: center">Flatten</td>
+<td style="text-align: center">Flat from 5x5x16 to 400</td>
+</tr>
+<tr>
+<td style="text-align: center"><strong>Layer - 3</strong>: Fully Connected</td>
+<td style="text-align: center">From 400 to 120</td>
+</tr>
+<tr>
+<td style="text-align: center">RELU</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">Dropout</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center"><strong>Layer - 4</strong>: Fully Connected</td>
+<td style="text-align: center">From 120 to 64</td>
+</tr>
+<tr>
+<td style="text-align: center">RELU</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">Dropout</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center"><strong>Layer - 5</strong>: Fully Connected</td>
+<td style="text-align: center">From 84 to 43</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_13">III. Model Training</h4>
+
+<p>In order to train the model, the batch size and the number of epochs are tuned as 128 and 30 respectively in code cell #8. At each epoch the training dataset is shuffled and then fed to the optimizer is batches of 128, to perform the traning operation.  The optimizer calculates the logits and its associated entropy, and then calculates the loss to minimize it.  Here, I have selected Adam Optimizer for this operation with a learning rate of 0.001.  The traning operation is defined in code cell #11.  In order to prevent model from overfitting, I have added L2_loss term (regularization component) to mean cross entropy, which is the total loss for that pass. The associated hyperparameter (beta) is set to 0.001 in code cell #9.</p>
+
+<p>In each epoch, as soon as the model is trained with full training data, both accuracy of traning and accuracy of validation are evaluated to check the performance at that epoch. Accordingly, this is repeated for next 29 epochs.  The training loop can be found in code cell #13.  Evaluation operation takes place by comparing the output/logits of the network (using the best tuned weights and bias) with the actual/true classification.  Similar to training operation, evaluation operation also takes place in batches (if the input is larger than batch), and the average of accuracy is reported by the evaluation method.  The associated code can be found in code cell #12.</p>
+
+<p>Here the hyperparamters are tabulated for ease of reader:</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Parameter</th>
+<th style="text-align: center">Value</th>
+<th style="text-align: center">Notation (name in code)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">Learning rate</td>
+<td style="text-align: center">0.001</td>
+<td style="text-align: center">\(\eta\) (rate)</td>
+</tr>
+<tr>
+<td style="text-align: center">Number of Epochs</td>
+<td style="text-align: center">30</td>
+<td style="text-align: center">EPOCHS</td>
+</tr>
+<tr>
+<td style="text-align: center">Batch size at each ephoch</td>
+<td style="text-align: center">128</td>
+<td style="text-align: center">BATCH_SIZE</td>
+</tr>
+<tr>
+<td style="text-align: center">Mean for Normal Dist. of W</td>
+<td style="text-align: center">0</td>
+<td style="text-align: center">\(\mu\) (mu)</td>
+</tr>
+<tr>
+<td style="text-align: center">Std. Deviation</td>
+<td style="text-align: center">0.075</td>
+<td style="text-align: center">\(\sigma\)  (sigma)</td>
+</tr>
+<tr>
+<td style="text-align: center">Regularization Parameter</td>
+<td style="text-align: center">0.001</td>
+<td style="text-align: center">\(\beta\) (beta)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_14">IV. Solution Approach</h4>
+
+<p>My approach to meet specified &gt;93% validation accuracy was mostly a trial and error.  In order to tune model hyperparameters and adjust the model itself, I have leveraged my knowlege on what to do to improve model accuracy and what kind of issue model can experience in various combination of accuracy numbers.</p>
+
+<p>I have started with the LeNet model that was introduced in classroom to indetify MNIST handwritten characters.  My rationale is, traffic sign identification is fundamentally an image classification problem, which I believe is similar to MNIST character recognition problem that looks into an image and classifies/identifies it from a finite sample of class IDs. </p>
+
+<p>However, with the exact LeNet model, both training accuracy and validation accuracy in predicting traffic sign was poor, which suggested me an possible underfitting issue, so first, I started tweaking the hyperparameters and processing input data until I have reached to a point where the training accuracy was good (~99%) within a reasonable number of epochs (~10).  I have preprocessed the image by converting it to grayscale and then normalizing.  My initial image normalization was ranged between 0.1 - 0.9, but changing it to -1.0 to 1.0 improved the result. I have also reduced sigma from 1.0 to 0.075.  </p>
+
+<p>Finally the model started achieving good &lsquo;training accuracy&rsquo; (also fast) but the validation accuracy was poor, which suggested me overfitting issue, so I started introducing dropout and l2 regularization.  Finally, with few iterations of the dropout and loss hyperparameter, I have managed to achieve the following resutls in 30 epochs:</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Tested Data Set</th>
+<th style="text-align: center">Prediction Accuracy</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">Training set</td>
+<td style="text-align: center">99.6%</td>
+</tr>
+<tr>
+<td style="text-align: center">Validation set</td>
+<td style="text-align: center">96.1%</td>
+</tr>
+<tr>
+<td style="text-align: center">Test set</td>
+<td style="text-align: center">93.3%</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_15">Conclusion on result:</h5>
+
+<p>Given the non-uniform distribution of the traning dataset and relatively small number of training epochs, I believe, the adjusted LeNet model is working well in predicting test dataset of traffic sign.  Though there are room for improvements beyond the model architecture; for example, data augmentation to make the uniform distribution of input data, splitting 20% of traning data as validation data so that model does not start traning the given validation dataset, and of-course exploring different CNN network; however, I have deferred them for future effort and focused mostly on a total machine learning pipeline using CNN.</p>
+
+<h3 id="toc_16">4. Test the Model on New Images</h3>
+
+<p>In this step, as per requirement I have downloaded five German traffic signs from web and tested the model on them.  Here I had to first prepare the image to make it compatible with the model input node shape.</p>
+
+<h5 id="toc_17">I. Acquiring New Images</h5>
+
+<p>Using <em>gimp</em> tool, first I have cropped the dowaloaded image to focus only on the traffic sign portion of the image and then exported it as .png file.  Next I have created a .csv file that records the downloaded traffic sign name and its associated classification.  Interestingly, the downloaded image comes in BGR channel as opposed to RGB channel, so I converted them to RGB and then shaped them to 32x32x3 in code cell #15.  Here are the original images after cropping only.</p>
+
+<p><img src=./downloaded_image/30km.png height="100" > 
+<img src=./downloaded_image/yield.png height="100" > 
+<img src=./downloaded_image/stop.png height="100" > 
+<img src=./downloaded_image/noentry.png height="100" > 
+<img src=./downloaded_image/roadwork.png height="100" ></p>
+
+<p>*<em>Images are collected from web</em></p>
+
+<p>In the following step, the images were preprocessed with the same preprocessing routine that was applied on the training dataset. Code cell #15 and code cell #16 shows the grayscale coversion and normalizing procedure respectively. </p>
+
+<p>Images after reshaping:</p>
+
+<p><img src=./writeup_images/30km32.png height="100">
+<img src=./writeup_images/yield32.png height="100">
+<img src=./writeup_images/stop32.png height="100"> 
+<img src=./writeup_images/noentry32.png height="100"> 
+<img src=./writeup_images/roadwork32.png height="100"></p>
+
+<p>And after grayscale conversion and normalization:</p>
+
+<p><img src=./writeup_images/30km32G.png height="100">
+<img src=./writeup_images/yield32G.png height="100">
+<img src=./writeup_images/stop32G.png height="100"> 
+<img src=./writeup_images/noentry32G.png height="100"> 
+<img src=./writeup_images/roadwork32G.png height="100"></p>
+
+<h4 id="toc_18">II. Performance on New Images</h4>
+
+<p>The images are then tested with the model to predict the class (or traffic sign ID).  I have evaluated the online images in code cell #17, by passing the logits to tensorflow.argmax(logits).eval() function, which returns the predicted class ID of the input image. Surprisingly, the model have accurately predicted all five images, leading to a 100% accuracy of prediction.  Here is the summary of prediction:</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Image</th>
+<th style="text-align: center">Prediction</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">Speed limit (30km/h)</td>
+<td style="text-align: center">Speed limit (30km/h)</td>
+</tr>
+<tr>
+<td style="text-align: center">Yield</td>
+<td style="text-align: center">Yield</td>
+</tr>
+<tr>
+<td style="text-align: center">Stop</td>
+<td style="text-align: center">Stop</td>
+</tr>
+<tr>
+<td style="text-align: center">No entry</td>
+<td style="text-align: center">No entry</td>
+</tr>
+<tr>
+<td style="text-align: center">Road work</td>
+<td style="text-align: center">Road work</td>
+</tr>
+</tbody>
+</table>
+
+<p>The accuracy of the outcome is evaluated in code cell #18 using previously defined &lsquo;evaluate accuracy&rsquo; method.</p>
+
+<h4 id="toc_19">III. Model Certainty - Softmax Probabilities</h4>
+
+<p>Now, to understand better how confidently the model have predicted the traffic signs, the top five softmax probabilites for each image are extracted in code cell #19.  Here tensorflow.nn.top_k method has been utilized to extract the information.  For improved visulazation of the the probabilites, bar charts have been created in code cell #21.  In order to generate the bar chart, I had to convert the softmax class id array into sign name array, which can be found in code cell #20.  Here are the top 5 probability distitbution as predicted by the model.</p>
+
+<p><img src=./writeup_images/bar_30km.png height="300">
+<img src=./writeup_images/bar_yield.png height="300">
+<img src=./writeup_images/bar_stop.png height="300"> 
+<img src=./writeup_images/bar_noentry.png height="300"> 
+<img src=./writeup_images/bar_roadwork.png height="300" align="center"></p>
+
+<p>As we see, except for &lsquo;stop sign&rsquo; the model was almost 100% confident in evaluting the  rest of the images.  It was only 60% confident about stop sign being a stop sign, while suspecting &lsquo;ahead only&rsquo; sign with 25% confidence (see appendix for numbers).  This suggests me that, the prediction result is biased by images of &lsquo;Ahead Only&rsquo; (id - 35) sign, which is also evident in the image distribution in training dataset as presented earlier in this writeup.  I believe, data augmentation can result in improved confidence in such scenario, thereby improving the overall accuracy of the model beyond what is reported in this writeup.</p>
+
+<h3 id="toc_20">Appendix:</h3>
+
+<p>Topmax probabilty numbers for reference.</p>
+
+<div><pre class="line-numbers"><code class="language-python">Top five topmax probabilites of german traffic signs found on web:
+[[  9.99999523e-01   4.43674679e-07   3.11366492e-12   1.71460339e-12   1.40853941e-12]
+ [  1.00000000e+00   2.55283381e-12   3.13366378e-14   2.54277664e-14   7.02968525e-15]
+ [  5.92689216e-01   1.49673149e-01   4.98649850e-02   4.93375361e-02   4.56691384e-02]
+ [  9.99999762e-01   2.48646245e-07   2.88019759e-08   1.07460414e-08   3.67510355e-09]
+ [  9.99999762e-01   2.60950316e-07   1.71834352e-11   4.61139937e-12   6.27848305e-13]]
+Corresponding label ID:
+[[ 1  2  4 38  5]
+ [13 15 12 35 14]
+ [14 35 33 13 25]
+ [17 40  9 14 33]
+ [25 11 20 18 30]]</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.python={"triple-quoted-string":{pattern:/"""[\s\S]+?"""|'''[\s\S]+?'''/,alias:"string"},comment:{pattern:/(^|[^\\])#.*/,lookbehind:!0},string:/("|')(?:\\?.)*?\1/,"function":{pattern:/((?:^|\s)def[ \t]+)[a-zA-Z_][a-zA-Z0-9_]*(?=\()/g,lookbehind:!0},"class-name":{pattern:/(\bclass\s+)[a-z0-9_]+/i,lookbehind:!0},keyword:/\b(?:as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|pass|print|raise|return|try|while|with|yield)\b/,"boolean":/\b(?:True|False)\b/,number:/\b-?(?:0[bo])?(?:(?:\d|0x[\da-f])[\da-f]*\.?\d*|\.\d+)(?:e[+-]?\d+)?j?\b/i,operator:/[-+%=]=?|!=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]|\b(?:or|and|not)\b/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+<script type="text/javascript">
+!function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={html:"HTML",xml:"XML",svg:"SVG",mathml:"MathML",css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
